@@ -16,10 +16,10 @@ namespace SampleSite.Tests
         [SetUp]
         public void BeforeEach()
         {
-            driver = new ChromeDriver(Path.GetFullPath(@"../../../../"+"_drivers"));
+            driver = new ChromeDriver(Path.GetFullPath(@"../../../../" + "_drivers"));
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             App = new App(driver);
-            
+
         }
 
         [TearDown]
@@ -45,7 +45,7 @@ namespace SampleSite.Tests
             // Get Page Heading.
             // var MFPageHeading = driver.FindElement(By.CssSelector("h1.node__title>a>span"));
             var MFPageHeading = App.MFCalPage.Dom.MFPageHeading;
-            Assert.AreEqual("Mutual Fund Calculators",MFPageHeading.Text);
+            Assert.AreEqual("Mutual Fund Calculators", MFPageHeading.Text);
         }
     }
 }

@@ -1,6 +1,6 @@
 # C#-UI-Test-Auto-Framework-Demo
 
-This is just a demo project to practice Web Test Automation using Selenium in C# with NUnit 3 framework.
+This is just a demo project to practice Web Test Automation using Selenium in C# with NUnit 3 framework. Sample Site used: https://www.mutualfundssahihai.com/
 
 ## Pre-requisite
 

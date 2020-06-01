@@ -10,7 +10,7 @@ namespace SampleSite.Pages
         public HamBurgerMenu(IWebDriver driver)
         {
             Dom = new HamBurgerMenuDom(driver);
-            
+
         }
 
         public void ClickHamBurgerMenu()
@@ -27,26 +27,27 @@ namespace SampleSite.Pages
         }
 
         public void ClickMenuItemByOption(string name)
-        {   
+        {
             IWebElement MenuItem = GetMenuOptionByName(name);
-            if (MenuItem!=null)
+            if (MenuItem != null)
             {
                 MenuItem.Click();
             }
         }
 
         public IWebElement GetMenuOptionByName(string optionName)
-        {   
+        {
             optionName = optionName.ToLower();
 
             if (optionName.Contains(" "))
             {
-                optionName = optionName.Replace(" ","-").ToLower();
+                optionName = optionName.Replace(" ", "-").ToLower();
             }
             if (optionName.Equals("home"))
             {
                 optionName = "";
-            }else
+            }
+            else
             {
                 optionName = "/" + optionName;
             }
