@@ -4,8 +4,8 @@ This is just a demo project to practice Web Test Automation using Selenium in C#
 
 ## Pre-requisite
 
-1. Make sure dotnet 3+ is already install (check with $ dotnet --version)
-2. Git should be already install to clone the repo. (Or use download & unzip)
+1. Make sure dotnet 3+ is already installed (check with $ dotnet --version)
+2. Git should be already installed to clone the repo. (Or use download & unzip)
 
 ## Installation and Running Sample Test
 
@@ -50,4 +50,5 @@ dotnet test
 ```
 
 ## Note:
-This demo project is build on Mac. TBT for Windows and Linux.
+1. Things are not completed yet, Need to write framework level common utilites. (TBD).
+2. This demo project is build on Mac. TBT for Windows and Linux.

@@ -19,6 +19,8 @@ namespace SampleSite.Tests
             driver = new ChromeDriver(Path.GetFullPath(@"../../../../" + "_drivers"));
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             App = new App(driver);
+            // Go to Mututalfundssahihai.com
+            driver.Url = "https://www.mutualfundssahihai.com";
 
         }
 
@@ -32,8 +34,7 @@ namespace SampleSite.Tests
         [Test]
         public void Inflation_Calculator_is_on_MFCalulator_Page()
         {
-            // Go to Mututalfundssahihai.com
-            driver.Url = "https://www.mutualfundssahihai.com";
+            
 
             // Open Hamburger menu
             // driver.FindElement(By.Id("toggle-icon")).Click();
