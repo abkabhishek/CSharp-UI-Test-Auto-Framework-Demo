@@ -3,24 +3,30 @@ using System.IO;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SampleSite.Pages;
 
 namespace SampleSite.Tests
 {
     public class MFCalculatorTests
     {
         IWebDriver driver;
+        App App;
+
 
         [SetUp]
         public void BeforeEach()
         {
             driver = new ChromeDriver(Path.GetFullPath(@"../../../../"+"_drivers"));
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            App = new App(driver);
+            
         }
 
         [TearDown]
         public void AfterEach()
         {
             driver.Quit();
+            App = null;
         }
 
         [Test]
@@ -30,13 +36,15 @@ namespace SampleSite.Tests
             driver.Url = "https://www.mutualfundssahihai.com";
 
             // Open Hamburger menu
-            driver.FindElement(By.Id("toggle-icon")).Click();
+            // driver.FindElement(By.Id("toggle-icon")).Click();
+            App.Home.Menu.GoToMFCaluclatorPage();
 
             // Click on Mutual Fund Calculator option
-            driver.FindElement(By.CssSelector(".mm-panels a[href='/en/calculators']")).Click();
+            // driver.FindElement(By.CssSelector(".mm-panels a[href='/en/calculators']")).Click();
 
             // Get Page Heading.
-            var MFPageHeading = driver.FindElement(By.CssSelector("h1.node__title>a>span"));
+            // var MFPageHeading = driver.FindElement(By.CssSelector("h1.node__title>a>span"));
+            var MFPageHeading = App.MFCalPage.Dom.MFPageHeading;
             Assert.AreEqual("Mutual Fund Calculators",MFPageHeading.Text);
         }
     }
